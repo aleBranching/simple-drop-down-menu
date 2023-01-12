@@ -1,0 +1,105 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 10rem;
+  background-color: black;
+  display: flex;
+  /* align-items: ; */
+  gap: 10rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.link {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  background: none;
+  font-size: 2rem;
+  cursor: pointer;
+  /* box-sizing: border-box; */
+  /* padding-bottom:5px; */
+  transition: margin-bottom 0.5s ease;
+}
+
+.header {
+  color: aliceblue;
+}
+
+.link-wrapper::after {
+  content: "";
+  display: block;
+  height: 0.4rem;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.link-wrapper:hover .link {
+  margin-bottom: 5px;
+}
+.link-wrapper:hover::after {
+  content: "";
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  color: pink;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  /* height: auto; */
+  height: auto;
+  /* bottom: -90%; */
+  top: 100%;
+  padding-bottom: 0.5rem;
+  /* padding-left: 0.3rem; */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  transform: translate(0, -10px);
+  /* overflow: scroll; */
+  /* z-index: 10; */
+}
+
+.link-wrapper:hover > .dropdown-menu {
+  /* display: block; */
+  opacity: 1;
+  /* curs */
+  pointer-events: all;
+  height: auto;
+  transform: translate(0, 0);
+}
+
+.link + .dropdown-menu:hover {
+  /* display: block; */
+  opacity: 1;
+  /* curs */
+  pointer-events: all;
+  height: auto;
+}
+
+.subcategory {
+  /* border-top: 2px solid pink; */
+  border-top-width: 90%;
+  padding: 1rem;
+  opacity: 0.5;
+  font-weight: 900;
+}
+
+.subcategory:hover {
+  background-color: rgb(48, 41, 41);
+  opacity: 1;
+}
